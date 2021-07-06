@@ -318,3 +318,123 @@ switch (age) {
     break;
 }
 console.clear();
+console.clear();
+
+// LOOPS : FOR | WHILE | DO-WHILE
+let a = 34;
+a += 1;
+a++;
+console.log(a);
+
+for (let i = 0; i < 10; i++) {
+  console.log(i);
+}
+console.clear();
+
+let j = 1;
+while (j < 10) {
+  console.log(j);
+  j += 1;
+}
+console.clear();
+
+let k = 0;
+do {
+  k += 1;
+  console.log(k + 1);
+} while (k < 10);
+console.log("\n\n\n");
+console.clear();
+
+let Arr = [4, 6, 8, 89, 1];
+Arr.forEach(function (e) {
+  console.log(e);
+});
+
+// for (let x = 0; x < Arr.length; x++) {
+//   const element = Arr[x];
+//   console.log(element);
+// }
+
+let obj = {
+  name3: "rohanDas",
+  type: "Dangerous Programmer",
+  Age: 22,
+  os: "Ubuntu",
+};
+
+for (let key in obj) {
+  console.log(`The ${key} of object is ${obj[key]}`);
+}
+console.clear();
+console.clear();
+
+// FUNCTION
+function greet(namee) {
+  console.log(
+    `Happy Birthday ${namee} How I wish I could fly to you right now and be with you on this special day of yours. But remember, my good wishes are always there with you. Happy Birthday!`
+  );
+}
+let namme = "Ayush";
+greet(namme);
+
+let naam = "Chinu";
+const mygreet = function (nam, thank = "Thanks a lot") {
+  let msg = `Happy Birthday ${nam} How I wish I could fly to you right now and be with you on this special day of yours. But remember, my good wishes are always there with you. ${thank}`;
+  return msg;
+};
+let val = mygreet(naam);
+console.log(val);
+
+arr = ["fruit", "vegetable", "furniture"];
+
+arr.forEach(function (e, index) {
+  console.log(e, index);
+});
+
+// Scope
+if (1) {
+  var l = 234;
+  console.log(l);
+}
+
+console.log(l);
+
+function ui(namee) {
+  let l = 8;
+  console.log(l);
+  return `This is a ${namee} ui`;
+}
+console.log(ui("Ayush"), l);
+console.clear();
+
+// MANIPULATING WEBSITES
+let v = window;
+// window.alert('Hello World');
+// alert("Hello World");   /* We can also write like this becoz window is a global object */
+console.log(v);
+
+// v=prompt('This will destroy your computer. Type your name');
+
+// v=confirm('Are you sure you want to delete this page')
+
+v = window.innerHeight;
+v = innerHeight;
+console.log(v);
+
+v = window.innerWidth;
+v = innerWidth;
+console.log(v);
+
+v = scrollX;
+v = scrollY;
+v = location;
+v = location.reload;
+v = location.toString();
+v = location.history;
+v = history.href;
+
+// v=location.history.go(1);        /*Moving forward */
+// v=location.history.go(1);        /*Moving backward */
+
+console.log(v);
