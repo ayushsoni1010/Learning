@@ -147,6 +147,12 @@ console.log(elem2, pr);
 // quick quiz
 // create a heading element with text as "Go to CodeWithHarry" and create an a tag outside it with href = "https://www.codewithharry.com"
 
+
+
+
+
+
+
 // EVENTS & EVENTS OBJECT
 
 document.getElementById("heading").addEventListener("click", function (e) {
@@ -166,39 +172,88 @@ document.getElementById("heading").addEventListener("click", function (e) {
 });
 console.clear();
 
+
+
+
+
 // MORE ON JS EVENTS
 
-let btn = document.getElementById("btn");
-btn.addEventListener("click", func1);
-btn.addEventListener("dblclick", func2);
-btn.addEventListener("mousedown", func3);
+let btn=document.getElementById('btn');
+btn.addEventListener('click',func1);
+btn.addEventListener('dblclick',func2);
+btn.addEventListener('mousedown',func3);
 
-function func1(e) {
-  console.log("Thanks", e);
+function func1(e){
+  console.log("Thanks",e);
 }
 
-function func2(e) {
-  console.log("Thanks for double click", e);
+function func2(e){
+  console.log("Thanks for double click",e);
 }
 
-function func3(e) {
-  console.log("Thanks for mousedown click", e);
+function func3(e){
+  console.log("Thanks for mousedown click",e);
 }
 
-document.querySelector(".no").addEventListener("mouseenter", function () {
-  console.log("You entered no");
+
+
+document.querySelector('.no').addEventListener('mouseenter',function(){
+  console.log('You entered no');
 });
 
-document.querySelector(".no").addEventListener("mouseleave", function () {
-  console.log("You exited no");
+document.querySelector('.no').addEventListener('mouseleave',function(){
+  console.log('You exited no');
 });
 
-document
-  .querySelector(".container")
-  .addEventListener("mousemove", function (e) {
-    document.body.style.backgroundColor = `rgb(${e.offsetX},${e.offsetY},${
-      e.offsetX + e.offsetY
-    })`;
-  });
+document.querySelector('.container').addEventListener('mousemove',function(e){
+  document.body.style.backgroundColor=`rgb(${e.offsetX},${e.offsetY},${e.offsetX + e.offsetY})`;
+});
 
 console.clear();
+
+
+
+
+
+
+
+
+
+
+
+// LOCAL & SESSION STORAGE IN JS
+
+let impArray = ['adrak', 'pyaz', 'bhindi'];
+
+// // Add a key-value pair inside local Storage
+// localStorage.setItem('Name', 'Harry');
+// localStorage.setItem('Name2', 'Rohan');
+// localStorage.setItem('Sabzi', JSON.stringify(impArray));
+
+// Clears the entire local storage
+// localStorage.clear();
+
+// Clear a particular key-value pair
+// localStorage.removeItem('Name2');
+
+// Retrieve an item from the local Storage
+// let name = localStorage.getItem('Name');
+// name = JSON.parse(localStorage.getItem('Sabzi'));
+// console.log(name)
+
+// sessionStorage.setItem('sessionName', 'sHarry');
+// sessionStorage.setItem('sessionName2', 'sRohan');
+// sessionStorage.setItem('sessionSabzi', JSON.stringify(impArray));
+
+
+
+
+
+
+
+
+
+
+
+
+
