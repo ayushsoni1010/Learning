@@ -147,12 +147,6 @@ console.log(elem2, pr);
 // quick quiz
 // create a heading element with text as "Go to CodeWithHarry" and create an a tag outside it with href = "https://www.codewithharry.com"
 
-
-
-
-
-
-
 // EVENTS & EVENTS OBJECT
 
 document.getElementById("heading").addEventListener("click", function (e) {
@@ -172,58 +166,46 @@ document.getElementById("heading").addEventListener("click", function (e) {
 });
 console.clear();
 
-
-
-
-
 // MORE ON JS EVENTS
 
-let btn=document.getElementById('btn');
-btn.addEventListener('click',func1);
-btn.addEventListener('dblclick',func2);
-btn.addEventListener('mousedown',func3);
+let btn = document.getElementById("btn");
+btn.addEventListener("click", func1);
+btn.addEventListener("dblclick", func2);
+btn.addEventListener("mousedown", func3);
 
-function func1(e){
-  console.log("Thanks",e);
+function func1(e) {
+  console.log("Thanks", e);
 }
 
-function func2(e){
-  console.log("Thanks for double click",e);
+function func2(e) {
+  console.log("Thanks for double click", e);
 }
 
-function func3(e){
-  console.log("Thanks for mousedown click",e);
+function func3(e) {
+  console.log("Thanks for mousedown click", e);
 }
 
-
-
-document.querySelector('.no').addEventListener('mouseenter',function(){
-  console.log('You entered no');
+document.querySelector(".no").addEventListener("mouseenter", function () {
+  console.log("You entered no");
 });
 
-document.querySelector('.no').addEventListener('mouseleave',function(){
-  console.log('You exited no');
+document.querySelector(".no").addEventListener("mouseleave", function () {
+  console.log("You exited no");
 });
 
-document.querySelector('.container').addEventListener('mousemove',function(e){
-  document.body.style.backgroundColor=`rgb(${e.offsetX},${e.offsetY},${e.offsetX + e.offsetY})`;
-});
+document
+  .querySelector(".container")
+  .addEventListener("mousemove", function (e) {
+    document.body.style.backgroundColor = `rgb(${e.offsetX},${e.offsetY},${
+      e.offsetX + e.offsetY
+    })`;
+  });
 
 console.clear();
 
-
-
-
-
-
-
-
-
-
-
 // LOCAL & SESSION STORAGE IN JS
 
-let impArray = ['adrak', 'pyaz', 'bhindi'];
+let impArray = ["adrak", "pyaz", "bhindi"];
 
 // // Add a key-value pair inside local Storage
 // localStorage.setItem('Name', 'Harry');
@@ -245,15 +227,179 @@ let impArray = ['adrak', 'pyaz', 'bhindi'];
 // sessionStorage.setItem('sessionName2', 'sRohan');
 // sessionStorage.setItem('sessionSabzi', JSON.stringify(impArray));
 
+// MATH OBJECT IN JS
 
+let x = 3;
+let y = 6;
+let z;
+z = x + y;
+z = x - y;
+z = x * y;
+z = x / y;
 
+// Exploring the Math object
+z = Math;
+z = Math.PI;
+z = Math.E;
+z = Math.round(5.4);
+z = Math.ceil(5.3);
+z = Math.floor(-5.3);
+z = Math.abs(5);
+z = Math.sqrt(64);
+z = Math.pow(2, 3);
+z = Math.min(2, 3, 34, 234, 2342, 34);
+z = Math.max(2, 3, 34, 234, 34);
+z = Math.random();
+z = 100 * Math.random();
+z = Math.ceil(50 + (100 - 50) * Math.random());
+// a = (0, 1)
+// a100 = a*100 = (0, 100)
+// a10_100 = 10+a*(100 - 10)
 
+console.log(z);
 
+// 3
+// 2.8
+// 2
+// 1
+// 0
+// -1
+// -2
+// -2.7
+// -3
 
+// DATE & TIME
 
+let today = new Date();
+// console.log(typeof today);
+let otherDate = new Date("8-4-2003 04:54:08");
+// otherDate = new Date('June 13 1976');
+// otherDate = new Date('09/16/1976');
+console.log(otherDate);
+let ab;
+ab = otherDate.getDay();
+ab = otherDate.getDate();
+ab = otherDate.getMinutes();
+// ab = otherDate.getSeconds();
+// ab = otherDate.getHours();
+ab = otherDate.getTime();
+ab = otherDate.getMilliseconds();
+ab = otherDate.getMonth();
+console.log(ab);
+otherDate.setDate(23);
+otherDate.setMonth(0);
+otherDate.setFullYear(1900);
+otherDate.setMinutes(2);
+otherDate.setHours(1);
+otherDate.setSeconds(3);
+console.log(otherDate);
 
+//ADDING DIV
+// Create a new element
+console.log("This is tutorial 25");
+/*
+You have to create a div and inject it into the page which contains a heading.
+whenever someone clicks on the div, it should be converted into an editable item. whenever user clicks away (blur). save the note into the local storage.
 
+*/
 
+// Create a new element
+let divElem = document.createElement("div");
 
+// Add text to that created element
+let val = localStorage.getItem("text");
+let text;
+if (val == null) {
+  text = document.createTextNode("This is my element. click to edit it");
+} else {
+  text = document.createTextNode(val);
+}
+divElem.appendChild(text);
 
+// Give element id, style and class
+divElem.setAttribute("id", "elem");
+divElem.setAttribute("class", "elem");
+divElem.setAttribute(
+  "style",
+  "border:2px solid black; width: 154px; margin: 34px; padding:23px;"
+);
 
+// Grab the main container
+let container2 = document.querySelector(".container");
+let first = document.getElementById("myfirst");
+
+// Insert the element before element with id first
+container2.insertBefore(divElem, first);
+
+console.log(divElem, container2, first);
+
+// add event listener to the divElem
+divElem.addEventListener("click", function () {
+  let noTextAreas = document.getElementsByClassName("textarea").length;
+  if (noTextAreas == 0) {
+    let html = elem.innerHTML;
+    divElem.innerHTML = ` <textarea class="textarea form-control" id="textarea" rows="3"> ${html}</textarea>`;
+  }
+  //listen for the blur event on textarea
+  let textarea = document.getElementById("textarea");
+  textarea.addEventListener("blur", function () {
+    elem.innerHTML = textarea.value;
+    localStorage.setItem("text", textarea.value);
+  });
+});
+
+// OBJECT LITERALS, CONSTRUCTOR IN JS
+
+// Object Literal for creating objects
+let car = {
+  name: "Maruti 800",
+  topSpeed: 89,
+  run: function () {
+    console.log("car is running");
+  },
+};
+// we have already seen constructors like these:
+// new Date();
+
+// Creating a constructor for cars
+function GeneralCar(givenName, givenSpeed) {
+  this.name = givenName;
+  this.topSpeed = givenSpeed;
+  this.run = function () {
+    console.log(`${this.name} Is Running`);
+  };
+  this.analyze = function () {
+    console.log(
+      `This car is slower by ${200 - this.topSpeed} Km/H than Mercedes`
+    );
+  };
+}
+car1 = new GeneralCar("Nissan", 180);
+car2 = new GeneralCar("Marutu Alto", 80);
+car3 = new GeneralCar("Mercedes", 200);
+console.log(car1, car2, car3);
+
+// OBJECT PROTOTYPE IN JS
+
+// Object literal : Object.prototype
+let obj = {
+  name: "harry",
+  channel: "Code With Harry",
+  address: "Mars",
+};
+
+function Obj(givenName) {
+  this.name = givenName;
+}
+
+Obj.prototype.getName = function () {
+  return this.name;
+};
+
+Obj.prototype.setName = function (newName) {
+  this.name = newName;
+};
+
+let obj2 = new Obj("Rohan Das");
+console.log(obj2);
+console.clear();
