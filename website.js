@@ -403,3 +403,20 @@ Obj.prototype.setName = function (newName) {
 let obj2 = new Obj("Rohan Das");
 console.log(obj2);
 console.clear();
+
+
+
+// ASYNCHRONOUS PROFRAMMING
+
+
+
+setTimeout(() => {
+  for (let index = 0; index < 4005; index++) {
+    const element = index;
+    console.log("This is index number" + index);
+  }
+}, 100);
+
+console.log("done printing");
+
+
