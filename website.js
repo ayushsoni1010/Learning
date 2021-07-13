@@ -410,15 +410,15 @@ console.clear();
 
 
 
-setTimeout(() => {
-  for (let index = 0; index < 4005; index++) {
-    const element = index;
-    console.log("This is index number" + index);
-  }
-}, 100);
+// setTimeout(() => {
+//   for (let index = 0; index < 4005; index++) {
+//     const element = index;
+//     console.log("This is index number" + index);
+//   }
+// }, 100);
 
-console.log("done printing");
-console.clear();
+// console.log("done printing");
+// console.clear();
 
 
 // CALLBACK FUNCTION
@@ -493,16 +493,16 @@ func1().then(function(){
 
 
 // Pretend that this response is coming from the server
-const students = [
+const students1 = [
     { name: "harry", subject: "JavaScript" },
     { name: "Rohan", subject: "Machine Learning" }
 ]
 
 
-function enrollStudent(student) {
+function enrollStudent(student1) {
     return new Promise(function (resolve, reject) {
         setTimeout(function () {
-            students.push(student);
+            students1.push(student1);
             console.log("Student has been enrolled");
             const error = false;
             if (!error) {
@@ -518,15 +518,15 @@ function enrollStudent(student) {
 function getStudents() {
     setTimeout(function () {
         let str = "";
-        students.forEach(function (student) {
-            str += `<li> ${student.name}</li>`
+        students1.forEach(function (student1) {
+            str += `<li> ${student1.name}</li>`
         });
         document.getElementById('students').innerHTML = str;
         console.log("Students have been fetched");
     }, 5000);
 }
 
-let newStudent = { name: "Sunny", subject: "Python" }
+let newStudent1 = { name: "Sunny", subject: "Python" }
 enrollStudent(newStudent).then(getStudents).catch(function () {
     console.log("Some error occured");
 });
@@ -534,5 +534,102 @@ enrollStudent(newStudent).then(getStudents).catch(function () {
 
 // function inside then is ran as - resolve()
 // function inside catch is ran as - reject()
+console.clear();
+
+
+
+
+
+
+
+// ARROW FUNCTIONS
+
+// Creating a regular function
+// const harry = function (){
+//     console.log("This is the best person ever")
+// }
+
+// Converting it to an arrow function
+// const harry = ()=>{
+//     console.log("This is the best person ever")
+// }
+// harry();
+
+// function returning something
+// const greet = function(){
+//     return "Good Morning";
+// }
+
+// One liners do not require braces/return
+// one line will automatically return
+// const greet = () =>  "Good Morning";
+
+// const greet = () =>  ({name: "harry"});
+
+// Single parameters do not need parenthesis
+// but you will have to put parenthesis if there are multiple paramteres
+// const greet = (name) => "Good Morning " + name + ending;
+
+// console.log(greet("Harry"));
+console.clear();
+
+
+
+
+
+
+//FETCH API IN JS
+
+// Button with id myBtn
+let myBtn = document.getElementById("myBtn");
+
+// div with id content
+let content = document.getElementById("content");
+
+// function getData(){
+//     console.log("Started getData")
+//     url = "harry.txt";
+//     fetch(url).then((response)=>{
+//         console.log("Inside first then")
+//         return response.text();
+//     }).then((data)=>{
+//         console.log("Inside second then")
+//         console.log(data);
+//     })
+// }
+
+// function getData() {
+//   console.log("Started getData");
+//   url = "https://api.github.com/users";
+//   fetch(url)
+//     .then((response) => {
+//       console.log("Inside first then");
+//       return response.json();
+//     })
+//     .then((data) => {
+//       console.log("Inside second then");
+//       console.log(data);
+//     });
+// }
+
+// function postData() {
+//   url = "http://dummy.restapiexample.com/api/v1/create";
+//   data = '{"name":"harglry347485945","salary":"123","age":"23"}';
+//   params = {
+//     method: "post",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: data,
+//   };
+//   fetch(url, params)
+//     .then((response) => response.json())
+//     .then((data) => console.log(data));
+// }
+
+// console.log("Before running getData")
+// getData()
+// console.log("After running getData")
+// postData();
 
 
