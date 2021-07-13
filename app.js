@@ -56,74 +56,79 @@ let rohan = new Programmer("Rohan", 2, 0, "Javascript");
 console.log(rohan);
 console.clear();
 
-
-
 // ES6 CLASSES & INHERITANCE IN JS
 
-class Employee1{
-    constructor(givenName,givenExperience,givenDivision){
-        this.name=givenName;
-        this.experience=givenExperience;
-        this.division=givenDivision;
-    }
-    slogan(){
-        return `I am ${this.name} and this company is the best`;
-    }
-    joiningYear(){
-        return 2020-this.experience;
-    }
-    static add(a,b){
-        return a+b;
-    }
+class Employee1 {
+  constructor(givenName, givenExperience, givenDivision) {
+    this.name = givenName;
+    this.experience = givenExperience;
+    this.division = givenDivision;
+  }
+  slogan() {
+    return `I am ${this.name} and this company is the best`;
+  }
+  joiningYear() {
+    return 2020 - this.experience;
+  }
+  static add(a, b) {
+    return a + b;
+  }
 }
 
-let ayu= new Employee1("Ayush",56,"Division");
+let ayu = new Employee1("Ayush", 56, "Division");
 console.log(ayu);
 console.log(ayu.slogan());
 console.log(ayu.joiningYear());
-console.log(Employee1.add(34,5));
+console.log(Employee1.add(34, 5));
 
+class Programmer1 extends Employee1 {
+  constructor(
+    givenName,
+    givenExperience,
+    givenDivision,
+    givenLanguage,
+    givenGithub
+  ) {
+    super(givenName, givenExperience, givenDivision);
+    this.language = givenLanguage;
+    this.github = givenGithub;
+  }
 
-
-
-class Programmer1 extends Employee1{
-    constructor(givenName,givenExperience,givenDivision ,givenLanguage,givenGithub){
-        super(givenName,givenExperience,givenDivision);
-        this.language=givenLanguage;
-        this.github=givenGithub;
+  favouriteLanguage() {
+    if (this.language == "Python") {
+      return "Python";
+    } else {
+      return "JavaScript";
     }
+  }
 
-    favouriteLanguage(){
-        if(this.language=='Python'){
-            return 'Python';
-        }
-        else{
-            return 'JavaScript';
-        }
-    }
-
-    static multiply(a,b){
-        return a*b;
-    }
+  static multiply(a, b) {
+    return a * b;
+  }
 }
 
-
-ayu=new Programmer1('Ayu',34,'Division','JavaScript','ayushsoni1010');
+ayu = new Programmer1("Ayu", 34, "Division", "JavaScript", "ayushsoni1010");
 
 console.log(ayu);
 console.log(ayu.favouriteLanguage());
-console.log(Programmer1.multiply(5,7));
+console.log(Programmer1.multiply(5, 7));
 
-
-class Library{
-    constructor(){
-
-    }
-    getBookList(){}
-    issueBook(username,user){
-
-    }
-    returnBook(bookName){
-        
-    }
+class Library {
+  constructor() {}
+  getBookList() {}
+  issueBook(username, user) {}
+  returnBook(bookName) {}
 }
+
+console.log("this is tutorial 41");
+
+
+
+
+
+
+
+
+
+
+
