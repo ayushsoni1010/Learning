@@ -121,10 +121,32 @@ class Library {
 }
 
 console.log("this is tutorial 41");
+console.clear();
 
 
 
 
+//ASYNC & AWAIT IN JS
+
+console.log("This is tutorial 43");
+
+async function harrry() {
+  console.log("Inside harry function");
+  const response = await fetch("https://api.github.com/users");
+  console.log("before response");
+  const users = await response.json();
+  console.log("users resolved");
+  return users;
+
+  // return "harrry";
+}
+
+console.log("Before calling harry");
+let a = harrry();
+console.log("After calling harry");
+console.log(a);
+a.then((data) => console.log(data));
+console.log("Last line of this js file");
 
 
 
