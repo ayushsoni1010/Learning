@@ -631,5 +631,8 @@ let content = document.getElementById("content");
 // getData()
 // console.log("After running getData")
 // postData();
+console.clear();
+
+
 
 
