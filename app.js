@@ -352,3 +352,113 @@ if (regex.test(str)) {
   );
 }
 
+
+
+
+
+// ITERATORS IN JS
+console.log("The file is tutorial 51");
+// Iterators
+
+function fruitsIterator(values) {
+  let nextIndex = 0;
+  // we will return an object
+  return {
+    next: function () {
+      if (nextIndex < values.length) {
+        // We will return below object
+        return {
+          value: values[nextIndex++],
+          done: false,
+        };
+      } else {
+        // We will return below object with only done
+        return {
+          done: true,
+        }; 
+      }
+    },
+  };
+}
+
+const myArray = ["Apples", "Grapes", "Oranges", "Bhindi"];
+console.log("My array is ", myArray);
+
+// Using the iterator
+const fruits = fruitsIterator(myArray);
+console.log(fruits.next().value);
+console.log(fruits.next().value);
+console.log(fruits.next().value);
+console.log(fruits.next().value);
+console.log(fruits.next().value);
+
+
+
+
+// GENERTORS IN JS
+console.log("this is tutorial 53");
+// Generators in JavaScript
+// 1 - 1B
+
+function* numbersGen() {
+  let i = 0;
+
+  // yield 1;
+  // yield 2;
+  // yield 3;
+  // yield 4;
+  while (true) {
+    yield i++;
+    // yield (i++).toString();
+  }
+}
+
+const gen = numbersGen();
+console.log(gen.next().value);
+console.log(gen.next().value);
+
+
+
+
+// ALARM PROJECT
+console.log("This is tutorial 54");
+const alarmSubmit = document.getElementById("alarmSubmit");
+
+// Add an event listener to the submit button
+alarmSubmit.addEventListener("click", setAlarm);
+
+var audio = new Audio(
+  "https://interactive-examples.mdn.mozilla.net/media/examples/t-rex-roar.mp3"
+);
+
+// function to play the alarm ring tone
+function ringBell() {
+  audio.play();
+}
+
+// This function will run whenever alarm is set from the UI
+function setAlarm(e) {
+  e.preventDefault();
+  const alarm = document.getElementById("alarm");
+  alarmDate = new Date(alarm.value);
+  console.log(`Setting Alarm for ${alarmDate}...`);
+  now = new Date();
+
+  let timeToAlarm = alarmDate - now;
+  console.log(timeToAlarm);
+  if (timeToAlarm >= 0) {
+    setTimeout(() => {
+      console.log("Ringing now");
+      ringBell();
+    }, timeToAlarm);
+  }
+}
+
+
+
+
+
+
+
+
+
