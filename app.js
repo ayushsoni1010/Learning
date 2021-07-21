@@ -421,44 +421,309 @@ console.log(gen.next().value);
 
 
 // ALARM PROJECT
-console.log("This is tutorial 54");
-const alarmSubmit = document.getElementById("alarmSubmit");
+// console.log("This is tutorial 54");
+// const alarmSubmit = document.getElementById("alarmSubmit");
 
-// Add an event listener to the submit button
-alarmSubmit.addEventListener("click", setAlarm);
+// // Add an event listener to the submit button
+// // alarmSubmit.addEventListener("click", setAlarm);
 
-var audio = new Audio(
-  "https://interactive-examples.mdn.mozilla.net/media/examples/t-rex-roar.mp3"
-);
+// var audio = new Audio(
+//   "https://interactive-examples.mdn.mozilla.net/media/examples/t-rex-roar.mp3"
+// );
 
-// function to play the alarm ring tone
-function ringBell() {
-  audio.play();
+// // function to play the alarm ring tone
+// function ringBell() {
+//   audio.play();
+// }
+
+// // This function will run whenever alarm is set from the UI
+// function setAlarm(e) {
+//   e.preventDefault();
+//   const alarm = document.getElementById("alarm");
+//   alarmDate = new Date(alarm.value);
+//   console.log(`Setting Alarm for ${alarmDate}...`);
+//   now = new Date();
+
+//   let timeToAlarm = alarmDate - now;
+//   console.log(timeToAlarm);
+//   if (timeToAlarm >= 0) {
+//     setTimeout(() => {
+//       console.log("Ringing now");
+//       ringBell();
+//     }, timeToAlarm);
+//   }
+// }
+
+console.clear();
+
+
+
+
+// For-in & For-of LOOP 
+
+console.log("This is tutorial 56 on for-in and for-of loops");
+
+let people = ["Harry", "Rohan", "SkillF", "Shubham", "Vikrant"];
+
+// **********For in loop*******
+
+// Traditional for loop:
+// for (let index = 0; index < people.length; index++) {
+//     const element = people[index];
+//     console.log(element);
+// }
+
+// 1. ITERATING AN OBJECT
+let obj = {
+  name: "Harry",
+  language: "JavaScript",
+  hobbies: "Android app development",
+};
+// console.log(obj);
+// 1.1 Iterating an object using Traditional for loop:
+// for (let index = 0; index < Object.keys(obj).length; index++) {
+//     const element = obj[Object.keys(obj)[index]];
+//     console.log(element);
+// }
+
+// 1.2 Iterating an object using for-in loop:
+for (let key in obj) {
+  console.log(obj[key]);
 }
 
-// This function will run whenever alarm is set from the UI
-function setAlarm(e) {
-  e.preventDefault();
-  const alarm = document.getElementById("alarm");
-  alarmDate = new Date(alarm.value);
-  console.log(`Setting Alarm for ${alarmDate}...`);
-  now = new Date();
+// 2. ITERATING A STRING
+// We can use for in with strings to loop through all the characters
+myString = "This is my string";
+for (let char in myString) {
+  console.log(myString[char]);
+}
 
-  let timeToAlarm = alarmDate - now;
-  console.log(timeToAlarm);
-  if (timeToAlarm >= 0) {
-    setTimeout(() => {
-      console.log("Ringing now");
-      ringBell();
-    }, timeToAlarm);
+// Quiz: Use traditional for loop to iterate through the same string
+
+// **********For of loop***********
+console.log("*****************For of loop starts here**************");
+people = ["Harry", "Rohan", "SkillF", "Shubham", "Vikrant"];
+
+for (let name of people) {
+  console.log(name);
+}
+
+for (let name of myString) {
+  console.log(name);
+}
+console.clear();
+
+
+
+
+
+
+
+
+
+// MAPS IN JS
+
+// Maps in JavaScript : We can use any type of key or value
+const myMap= new Map();
+console.log(myMap);
+
+let key1='myStr',
+    key2={},
+    key3=function(){};
+
+// Setting map values
+myMap.set(key1 , "This is a string");
+myMap.set(key2 , "This is a blank obj");
+myMap.set(key3 , "This is an empty function");
+
+console.log(myMap);
+
+// Getting the values from a Map
+let value1= myMap.get(key1);
+console.log(value1);
+
+// Get the size of the map
+console.log(myMap.size);
+
+console.log('\n');
+
+// We can loop using for-of to get keys and values
+for(let [key,value] of myMap){
+  console.log(key,value);
+}
+console.log("\n");
+
+// Get only keys
+for(let key of myMap.keys()){
+  console.log(key);
+}
+
+// Get only values
+for(let value of myMap.values()){
+  console.log(value);
+}
+
+// We can loop through a map using for each loop
+myMap.forEach((value,key) => {
+  console.log('Key is ',key);
+  console.log('Value is ',value);
+});
+
+
+
+// Converting map to an array
+let myArray1 = Array.from(myMap);
+console.log('Map to array is ',myArray1);
+
+
+// Converting map keys to an array
+let myKeysArray = Array.from(myMap.keys());
+console.log('Map to array is ',myKeysArray);
+
+
+// Converting map values to an array
+let myValuesArray = Array.from(myMap.values());
+console.log('Map to array is ',myValuesArray);
+
+console.clear();
+
+
+
+
+// SETS IN JAVASCRIPT
+// Set stores unique values
+
+const mySet=new Set();      //Initialize an empty set
+console.log('The set looks like : ',mySet);
+
+// Addign values to this set
+mySet.add('This');
+mySet.add('My Name');
+mySet.add('This');
+mySet.add('That');
+mySet.add(345);
+mySet.add(true);
+mySet.add(false);
+console.log('The set looks like this now: ',mySet);
+
+// Use a constructor to initialize the set
+let mySet2 = new Set([1,45,'this',false,{a:5,b:9},'this']);
+console.log('New Set: ',mySet2);
+
+// Get the size of Set
+console.log(mySet.size);
+
+// Check whether set has 346 or not 
+console.log(mySet.has(34));
+console.log(mySet.has(346));
+console.log(mySet.has('This'));
+
+console.log('Before removal ',mySet);
+// Remove an element from the set
+mySet.delete('This');
+console.log('Ater removal ',mySet);
+
+
+// Iterating a set
+for(let item of mySet){
+  console.log('Item is : ',item);
+}
+
+mySet.forEach((item)=>{
+  console.log('Item is : ',item);
+})
+
+
+let mySet3= Array.from(mySet);
+console.log(mySet3);
+
+console.clear();
+
+
+
+
+
+
+// SYMBOLS IN JAVASCRIPT
+let sym1= Symbol();
+console.log(sym1);
+console.log(typeof sym1);
+
+sym1 = Symbol('My Identifer');
+let sym2 = Symbol('My Identifer');
+console.log(sym1===sym2);
+
+const a1 = "This is ";
+const b1 = "This is ";
+
+console.log(a1===b1);
+console.log(null===null);
+console.log(undefined===undefined);
+
+const k1 = Symbol();
+const k2 = Symbol();
+
+let myobj ={};
+myobj[k1]="Harry";
+myobj[k2]="Rohan";
+myobj['name']="Good boy"
+myobj[4]="Good int"
+
+console.log(myobj);
+console.log(myobj[k1]);
+console.log(myobj[k2]);
+
+// console.log(myobj.k2);    
+// !! Alert !! : cannot do this to get Rohan because it is same as myobj["k2"];
+
+// Symbols are ignored in for-in loop
+// for(let key in myobj){
+//   console.log(key, myobj[key]);
+// }
+
+console.log('\n');
+console.log(JSON.stringify(myobj));
+console.clear();
+
+
+
+
+
+
+
+// DESTRUCTURING IN JAVASCRIPT
+let m,n;
+[m,n]=[34,56];
+console.log(m,n);
+
+[g, h, j, ...k]=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+
+console.log(g);
+console.log(h);
+console.log(j);
+console.log(k);
+
+// Array Distructuring
+({z, x, c, ...v}={z:23, x:345, c:89, v:213, b:65 })
+console.log(z,x , c, v);
+
+const fruits1 = ['Apple' , 'Bananas' , 'Mangoes'];
+[z,x,c] = fruits1;
+console.log(z,x , c);
+
+
+// Object Distructuring
+const laptop ={
+  model: 'HP Pavilion',
+  age: '24 days',
+  gender:'Male',
+  net: 1233,
+  start: function(){
+    console.log('Started');
   }
 }
 
-
-
-
-
-
-
-
-
+let {model, age, gender, net, start} = laptop;
+console.log(model, age, gender, net, start);
+start();
+console.clear();
