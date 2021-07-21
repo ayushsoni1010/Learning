@@ -421,44 +421,94 @@ console.log(gen.next().value);
 
 
 // ALARM PROJECT
-console.log("This is tutorial 54");
-const alarmSubmit = document.getElementById("alarmSubmit");
+// console.log("This is tutorial 54");
+// const alarmSubmit = document.getElementById("alarmSubmit");
 
-// Add an event listener to the submit button
-alarmSubmit.addEventListener("click", setAlarm);
+// // Add an event listener to the submit button
+// // alarmSubmit.addEventListener("click", setAlarm);
 
-var audio = new Audio(
-  "https://interactive-examples.mdn.mozilla.net/media/examples/t-rex-roar.mp3"
-);
+// var audio = new Audio(
+//   "https://interactive-examples.mdn.mozilla.net/media/examples/t-rex-roar.mp3"
+// );
 
-// function to play the alarm ring tone
-function ringBell() {
-  audio.play();
+// // function to play the alarm ring tone
+// function ringBell() {
+//   audio.play();
+// }
+
+// // This function will run whenever alarm is set from the UI
+// function setAlarm(e) {
+//   e.preventDefault();
+//   const alarm = document.getElementById("alarm");
+//   alarmDate = new Date(alarm.value);
+//   console.log(`Setting Alarm for ${alarmDate}...`);
+//   now = new Date();
+
+//   let timeToAlarm = alarmDate - now;
+//   console.log(timeToAlarm);
+//   if (timeToAlarm >= 0) {
+//     setTimeout(() => {
+//       console.log("Ringing now");
+//       ringBell();
+//     }, timeToAlarm);
+//   }
+// }
+
+console.clear();
+
+
+
+
+// For-in & For-of LOOP 
+
+console.log("This is tutorial 56 on for-in and for-of loops");
+
+let people = ["Harry", "Rohan", "SkillF", "Shubham", "Vikrant"];
+
+// **********For in loop*******
+
+// Traditional for loop:
+// for (let index = 0; index < people.length; index++) {
+//     const element = people[index];
+//     console.log(element);
+// }
+
+// 1. ITERATING AN OBJECT
+let obj = {
+  name: "Harry",
+  language: "JavaScript",
+  hobbies: "Android app development",
+};
+// console.log(obj);
+// 1.1 Iterating an object using Traditional for loop:
+// for (let index = 0; index < Object.keys(obj).length; index++) {
+//     const element = obj[Object.keys(obj)[index]];
+//     console.log(element);
+// }
+
+// 1.2 Iterating an object using for-in loop:
+for (let key in obj) {
+  console.log(obj[key]);
 }
 
-// This function will run whenever alarm is set from the UI
-function setAlarm(e) {
-  e.preventDefault();
-  const alarm = document.getElementById("alarm");
-  alarmDate = new Date(alarm.value);
-  console.log(`Setting Alarm for ${alarmDate}...`);
-  now = new Date();
-
-  let timeToAlarm = alarmDate - now;
-  console.log(timeToAlarm);
-  if (timeToAlarm >= 0) {
-    setTimeout(() => {
-      console.log("Ringing now");
-      ringBell();
-    }, timeToAlarm);
-  }
+// 2. ITERATING A STRING
+// We can use for in with strings to loop through all the characters
+myString = "This is my string";
+for (let char in myString) {
+  console.log(myString[char]);
 }
 
+// Quiz: Use traditional for loop to iterate through the same string
 
+// **********For of loop***********
+console.log("*****************For of loop starts here**************");
+people = ["Harry", "Rohan", "SkillF", "Shubham", "Vikrant"];
 
+for (let name of people) {
+  console.log(name);
+}
 
-
-
-
-
-
+for (let name of myString) {
+  console.log(name);
+}
+console.clear();
